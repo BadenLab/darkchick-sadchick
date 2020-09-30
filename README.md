@@ -17,3 +17,16 @@ If the light is off or on for longer than it is supposed to, it sends an "alarm"
 
 
 ### this system is currently before alpha, so proceed with care.
+
+
+Documentation (links with tutorials used to put this together)
+
+Adatfruit sensor  and how to wire it to the Pi GPIO https://learn.adafruit.com/adafruit-tsl2591/python-circuitpython
+
+
+Getting SSH on the RPi without having to have a monitor and keyboard (information "injected" directly on SD card before first boot) https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md
+
+
+Getting the RPI connected without keyboard, mouse and monitor (information injected directly on SD card) https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+
+Install Circuit Python on the RPi https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
