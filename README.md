@@ -33,3 +33,8 @@ Install Circuit Python on the RPi https://learn.adafruit.com/circuitpython-on-ra
 
 Install the library for the sensor https://github.com/adafruit/Adafruit_CircuitPython_TSL2591
 
+Once you have setup everything on the Pi, and made sure the example code from Adafruit works, we need to move to the Blynk.io side of things https://blynk.io/
+
+This is the platform that will allow data from the Pi to be transmitted over the web and to the users mobile phone app. This is only free for up to 5 projects, but since we need something quick and easy, this will do.
+
+Check their get-started page to start https://blynk.io/en/getting-started
