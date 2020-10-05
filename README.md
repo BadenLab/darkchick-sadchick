@@ -30,3 +30,6 @@ Getting SSH on the RPi without having to have a monitor and keyboard (informatio
 Getting the RPI connected without keyboard, mouse and monitor (information injected directly on SD card) https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
 
 Install Circuit Python on the RPi https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
+
+Install the library for the sensor https://github.com/adafruit/Adafruit_CircuitPython_TSL2591
+
