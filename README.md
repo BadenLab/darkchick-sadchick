@@ -31,7 +31,9 @@ Getting the RPI connected without keyboard, mouse and monitor (information injec
 
 Install Circuit Python on the RPi https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi
 
-Install the library for the sensor https://github.com/adafruit/Adafruit_CircuitPython_TSL2591
+Install the library for the lux sensor https://github.com/adafruit/Adafruit_CircuitPython_TSL2591
+
+Install the library for the DHT11 temperature/humidity sensor https://github.com/adafruit/Adafruit_CircuitPython_DHT
 
 Once you have setup everything on the Pi, and made sure the example code from Adafruit works, we need to move to the Blynk.io side of things https://blynk.io/
 
