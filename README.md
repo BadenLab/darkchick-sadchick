@@ -42,3 +42,10 @@ This is the platform that will allow data from the Pi to be transmitted over the
 Check their get-started page to start https://blynk.io/en/getting-started
 
 
+### installations:
+
+#### Chick room in Animal unit:
+ - Due to the lack of internet access in that room and most of the Animal unit, we needed to use an aditional Raspberry Pi connected to an ethernet port in an adjacent room, which then creates a WiFi access point. This access point is used by the RPi connected to the sensors to send data over the internet.
+   - since we are inside the university network, we needed to connect to Eduroam. However Raspian (RPi operating system), does not play well with it using stock software. The solution was to install network manager using the [steps here](https://raspberrypi.stackexchange.com/questions/29783/how-to-setup-network-manager-on-raspbian)
+   - Then we needed to turn the RPi into an access point using the steps [here](https://www.raspberrypi.org/forums/viewtopic.php?t=223329)
+
