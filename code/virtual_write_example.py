@@ -1,6 +1,10 @@
 import blynklib
 
-BLYNK_AUTH = 'Pi57KRWHKFGOhf2nlv1W_6xOfUi7Gk4N'
+with open(blinkapi) as fid:
+    apikey = fid.readline()
+
+
+BLYNK_AUTH = apikey
 
 # initialize Blynk
 blynk = blynklib.Blynk(BLYNK_AUTH)

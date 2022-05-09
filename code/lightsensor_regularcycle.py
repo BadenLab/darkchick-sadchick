@@ -7,7 +7,7 @@ import blynklib
 import board
 import busio
 import csv
-
+import os
 import adafruit_tsl2591
 import adafruit_dht
 
@@ -27,7 +27,10 @@ luxSensor = adafruit_tsl2591.TSL2591(i2c)
 #right now this is connected to gpio pin 18
 dhtSensor = adafruit_dht.DHT11(board.D18)
 #authentication code for IOT app
-BLYNK_AUTH = "Pi57KRWHKFGOhf2nlv1W_6xOfUi7Gk4N"
+with open(blinkapi) as fid:
+    apikey = fid.readline()
+
+BLYNK_AUTH = apikey
 
 blynk = blynklib.Blynk(BLYNK_AUTH)
 luxPin  = 0
@@ -78,16 +81,20 @@ def get_daytime():
 
     return now, today10am, today10pm, tomorrow10am,yesterday10pm
 
+
 csvPath = "/home/pi/Documents/"
 csvFile = "chickenRoomData.csv"
 
 #check to see if file already exists, in which case there is no need to add the header again
-try:
-    with open(csvPath+csvFile) as f:
-        header = False
-        # Do something with the file
-except IOError:
+if os.path.exists(csvPath+csvFile):
+    appendWrite = 'a' # append if already exists
+    header = False
+else:
+    appendWrite = 'w' # make a new file if not
     header = True
+
+
+
 
 counter1 = 0
 notifyDark = 0
@@ -105,7 +112,7 @@ while True:
     #we need "many" readings, because otherwise the blynk app sees the rpi as disconnected.
     #this is why there is this " if counter " component here
     if counter1 == 0:
-        with open(csvPath+csvFile,mode = 'a') as chickCSV:
+        with open(csvPath+csvFile,mode = appendWrite) as chickCSV:
             fieldnames = ['date', 'lux', 'temperature','humidity']
             writer = csv.DictWriter(chickCSV, fieldnames=fieldnames)
             if header is True:
@@ -151,13 +158,13 @@ while True:
     if counter1 == 120:
         counter1 = 0
     if notifyDark == 1:
-        blynk.notify('chickens are now in the dark! They must be sad!')
-        blynk.email(to="am2106@sussex.ac.uk",subject="chickenroom",body= "lights off when they should be on!")
+        blynk.notify('Fish are now in the dark! They must be sad!')
+        blynk.email(to="am2106@sussex.ac.uk",subject="Fish Facility",body= "lights off when they should be on!")
         notifyDark = 0
     if notifyLight == 1:
         #print("lights should be off! /n")
-        blynk.email(to="am2106@sussex.ac.uk",subject="chickenroom",body="lights on when they should be off!")
-        blynk.notify("lights are on! Chickens must be raving!!")
+        blynk.email(to="am2106@sussex.ac.uk",subject="Fish Facility",body="lights on when they should be off!")
+        blynk.notify("lights are on! Fish must be raving!!")
         notifyLight = 0
 
 
